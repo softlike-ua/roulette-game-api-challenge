@@ -20,7 +20,7 @@ export class AppService {
       request.session.user = this.jwtService.sign(user);
       return { message: "Init success" };
     } catch (e) {
-
+      return { message: e.message };
     }
   }
 
@@ -46,7 +46,7 @@ export class AppService {
       request.session.user = this.jwtService.sign(user);
       return { balance: user["balance"], result: checkBets };
     } catch (e) {
-      return { message: "Server error" };
+      return { message: e.message };
     }
   }
 
