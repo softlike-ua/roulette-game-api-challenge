@@ -44,7 +44,7 @@ export class AppService {
       // console.log(user);
 
       request.session.user = this.jwtService.sign(user);
-      return { balance: user["balance"], result: checkBets };
+      return { balance: user["balance"], result: checkBets, number: winNumber };
     } catch (e) {
       return { message: e.message };
     }
